@@ -23,11 +23,13 @@ public class login {
 		// driver = new ChromeDriver();
 		
 		System.setProperty("webdriver.chrome.driver", "/home/mansi/Downloads/Driver/chromedriver_linux64/chromedriver");
+		
                 ChromeOptions options = new ChromeOptions();
+		
                 options.setAcceptInsecureCerts(true);
 
 		//WebDriverManager.chromedriver().setup();
-		driver = new ChromeDriver(optons);
+		  driver = new ChromeDriver(options);
 		driver.get("https://uat.erp2.upda.co.in/");
 		driver.manage().window().maximize();
 		driver.findElement(By.name("email")).sendKeys("9838780000");
