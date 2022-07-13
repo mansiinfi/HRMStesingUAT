@@ -22,13 +22,13 @@ public class login {
 		// WebDriverManager.chromedriver().setup();
 		// driver = new ChromeDriver();
 		
-		//System.setProperty("webdriver.chrome.driver", "/home/mansi/Downloads/Driver/chromedriver_linux64/chromedriver");
+		System.setProperty("webdriver.chrome.driver", "/home/mansi/Downloads/Driver/chromedriver_linux64/chromedriver");
 
-		//ChromeOptions options = new ChromeOptions();
+		ChromeOptions options = new ChromeOptions();
 
-		//options.setAcceptInsecureCerts(true);
+		options.setAcceptInsecureCerts(true);
 
-		WebDriverManager.chromedriver().setup();
+		//WebDriverManager.chromedriver().setup();
 		driver = new ChromeDriver();
 		driver.get("https://uat.erp2.upda.co.in/");
 		driver.manage().window().maximize();
