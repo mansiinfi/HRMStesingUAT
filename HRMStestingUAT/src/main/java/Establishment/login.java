@@ -12,6 +12,8 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
+
 public class login {
 	public static WebDriver driver;
 
@@ -19,14 +21,15 @@ public class login {
 	public void intialize() throws InterruptedException {
 		// WebDriverManager.chromedriver().setup();
 		// driver = new ChromeDriver();
-		System.setProperty("webdriver.chrome.driver", "/home/mansi/Downloads/Driver/chromedriver_linux64/chromedriver");
+		
+		//System.setProperty("webdriver.chrome.driver", "/home/mansi/Downloads/Driver/chromedriver_linux64/chromedriver");
 
-		ChromeOptions options = new ChromeOptions();
+		//ChromeOptions options = new ChromeOptions();
 
-		options.setAcceptInsecureCerts(true);
+		//options.setAcceptInsecureCerts(true);
 
-		// WebDriverManager.chromedriver().setup();
-		driver = new ChromeDriver(options);
+		WebDriverManager.chromedriver().setup();
+		driver = new ChromeDriver();
 		driver.get("https://uat.erp2.upda.co.in/");
 		driver.manage().window().maximize();
 		driver.findElement(By.name("email")).sendKeys("9838780000");
