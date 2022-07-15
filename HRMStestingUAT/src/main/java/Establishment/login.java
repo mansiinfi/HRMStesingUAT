@@ -22,7 +22,7 @@ public class login {
 		// WebDriverManager.chromedriver().setup();
 		// driver = new ChromeDriver();
 		
-		System.setProperty("webdriver.chrome.driver", "/home/mansi/Downloads/Driver/chromedriver_linux64/chromedriver");
+		System.setProperty("webdriver.chrome.driver","/usr/local/bin/chromedriver");
 		
                 ChromeOptions options = new ChromeOptions();
 		
