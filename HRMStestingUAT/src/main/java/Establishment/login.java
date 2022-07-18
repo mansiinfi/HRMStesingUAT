@@ -12,7 +12,7 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
+
 
 public class login {
 	public static WebDriver driver;
@@ -22,17 +22,18 @@ public class login {
 		// WebDriverManager.chromedriver().setup();
 		// driver = new ChromeDriver();
 		
-		System.setProperty("webdriver.chrome.driver","/usr/local/bin/chromedriver");
+		System.setProperty("webdriver.chrome.driver", "/usr/local/bin/chromedriver");
 		
-                ChromeOptions options = new ChromeOptions();
-		
-                options.setAcceptInsecureCerts(true);
+		//System.setProperty("webdriver.chrome.driver", "src/test/resources/Driver/chromedriver_linux64/chromedriver");
+		ChromeOptions options = new ChromeOptions();
 
+		options.setAcceptInsecureCerts(true);
+	     driver = new ChromeDriver(options);
 		//WebDriverManager.chromedriver().setup();
-		  driver = new ChromeDriver(options);
+		//driver = new ChromeDriver();
 		driver.get("https://uat.erp2.upda.co.in/");
 		driver.manage().window().maximize();
-		driver.findElement(By.name("email")).sendKeys("9838780000");
+		driver.findElement(By.name("email")).sendKeys("7778889999");
 		driver.findElement(By.id("password")).sendKeys("User@1");
 		driver.findElement(By.cssSelector("div[class='col-5 ng-star-inserted'] button[type='submit']")).click();
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
@@ -41,11 +42,9 @@ public class login {
 
 		wait.until(ExpectedConditions.elementToBeClickable(By.name("b_acct_id"))).click();
 
-		WebElement element = driver.findElement(By.xpath("//span[@class='ng-option-label ng-star-inserted'][normalize-space()='9 - Integrated Testing Module']"));
+		WebElement element = driver.findElement(By.xpath("//span[normalize-space()='92 - Automated Testing Account']"));
 		actions.moveToElement(element).click().build().perform();
-		driver.findElement(
-				By.xpath("//div[@id='multi_account']//button[@class='btn btn-primary'][normalize-space()='Submit']"))
-				.click();
+		driver.findElement(By.xpath("//div[@id='multi_account']//button[@class='btn btn-primary'][normalize-space()='Submit']")).click();
 		Thread.sleep(2000);
 		driver.findElement(By.xpath("//button[normalize-space()='OK']")).click();
 		// driver.findElement(By.xpath("/html/body/div[2]/div[1]/app-portal-dash/div/div[2]/div[5]/button/img")).click();
