@@ -23,71 +23,62 @@ public class login {
 
 		// System.setProperty("webdriver.chrome.driver",
 		// "src/test/resources/Driver/chromedriver_linux64/chromedriver");
-		
-		
-		
-		 //Setting up capabilities to run our test script
-		
-		/* @Parameters(value= {"browser","version"})
-		
-		@BeforeClass public void setUp(String browser, String version) throws
-		 Exception { DesiredCapabilities capabilities = new DesiredCapabilities();
-		 capabilities.setCapability("browserName", browser);
-		 capabilities.setCapability("version", version);
-		 capabilities.setCapability("platform", "win10"); // If this cap isn't
-		 specified, it will just get any available one
-		 capabilities.setCapability("build", "LambdaTestSampleApp");
-		 capabilities.setCapability("name", "LambdaTestJavaSample");
-		 capabilities.setCapability("network", true); // To enable network logs
-		 capabilities.setCapability("visual", true); // To enable step by step
-		 screenshot capabilities.setCapability("video", true); // To enable video
-		 recording capabilities.setCapability("console", true); // To capture console
-		 logs try { driver = new RemoteWebDriver(new URL("https://" + username + ":" +
-		 accesskey + gridURL), capabilities); } catch (MalformedURLException e) {
-		 System.out.println("Invalid grid URL"); } catch (Exception e) {
-		 System.out.println(e.getMessage()); }
-		
-		}*/
-		
-		 
-	//	System.setProperty("webdriver.chrome.driver", "/usr/local/bin/chromedriver");
-	//	ChromeOptions options = new ChromeOptions();
-	//	options.addArguments("start-maximized"); // open Browser in maximized mode
-	//	 options.addArguments("disable-infobars"); // disabling infobars
-	//	options.addArguments("--disable-extensions"); // disabling extensions
-	//	options.addArguments("--disable-gpu"); // applicable to windows os only
-	//	 options.addArguments("--disable-dev-shm-usage"); // overcome limited resource problems
-	//	options.addArguments("--no-sandbox"); // Bypass OS security model
-	//	driver = new ChromeDriver(options);
-		 
-		
-			
-			 
-		
-			String downloadFilepath = System.getProperty("/usr/local/bin/chromedriver");
-			HashMap<String, Object> chromePrefs = new HashMap<>();
-			chromePrefs.put("profile.default_content_settings.popups", 0);
-			chromePrefs.put("download.default_directory", downloadFilepath);
-			ChromeOptions options = new ChromeOptions();
-			options.setExperimentalOption("prefs", chromePrefs);
-			options.addArguments("--no-sandbox");
-			options.addArguments("--headless"); //should be enabled for Jenkins
-			options.addArguments("--disable-dev-shm-usage"); //should be enabled for Jenkins
-			options.addArguments("--window-size=1920x1080"); //should be enabled for Jenkins
-			driver = new ChromeDriver(options);
-			 
 
-	       
-		 
-		 
-		 
-		//ChromeOptions chromeOptions = new ChromeOptions();
-		//chromeOptions.setHeadless(true);
+		// Setting up capabilities to run our test script
 
-		//System.setProperty("webdriver.chrome.driver", "/usr/local/bin/chromedriver");
-		//driver = new ChromeDriver(chromeOptions);
-		
-		
+		/*
+		 * @Parameters(value= {"browser","version"})
+		 * 
+		 * @BeforeClass public void setUp(String browser, String version) throws
+		 * Exception { DesiredCapabilities capabilities = new DesiredCapabilities();
+		 * capabilities.setCapability("browserName", browser);
+		 * capabilities.setCapability("version", version);
+		 * capabilities.setCapability("platform", "win10"); // If this cap isn't
+		 * specified, it will just get any available one
+		 * capabilities.setCapability("build", "LambdaTestSampleApp");
+		 * capabilities.setCapability("name", "LambdaTestJavaSample");
+		 * capabilities.setCapability("network", true); // To enable network logs
+		 * capabilities.setCapability("visual", true); // To enable step by step
+		 * screenshot capabilities.setCapability("video", true); // To enable video
+		 * recording capabilities.setCapability("console", true); // To capture console
+		 * logs try { driver = new RemoteWebDriver(new URL("https://" + username + ":" +
+		 * accesskey + gridURL), capabilities); } catch (MalformedURLException e) {
+		 * System.out.println("Invalid grid URL"); } catch (Exception e) {
+		 * System.out.println(e.getMessage()); }
+		 * 
+		 * }
+		 */
+
+		System.setProperty("webdriver.chrome.driver", "/usr/local/bin/chromedriver");
+		ChromeOptions options = new ChromeOptions();
+		options.addArguments("start-maximized"); // open Browser in maximized mode
+		options.addArguments("disable-infobars"); // disabling infobars
+		options.addArguments("--disable-extensions"); // disabling extensions
+		options.addArguments("--disable-gpu"); // applicable to windows os only
+		options.addArguments("--disable-dev-shm-usage"); // overcome limited resource problems
+		options.addArguments("--no-sandbox"); // Bypass OS security model
+		driver = new ChromeDriver(options);
+
+		// String downloadFilepath = System.getProperty("/usr/local/bin/chromedriver");
+		// HashMap<String, Object> chromePrefs = new HashMap<>();
+		// chromePrefs.put("profile.default_content_settings.popups", 0);
+		// chromePrefs.put("download.default_directory", downloadFilepath);
+		/// ChromeOptions options = new ChromeOptions();
+		// options.setExperimentalOption("prefs", chromePrefs);
+		// options.addArguments("--no-sandbox");
+		// options.addArguments("--headless"); //should be enabled for Jenkins
+		// options.addArguments("--disable-dev-shm-usage"); //should be enabled for
+		// Jenkins
+		// options.addArguments("--window-size=1920x1080"); //should be enabled for
+		// Jenkins
+		// driver = new ChromeDriver(options);
+
+		// ChromeOptions chromeOptions = new ChromeOptions();
+		// chromeOptions.setHeadless(true);
+
+		// System.setProperty("webdriver.chrome.driver", "/usr/local/bin/chromedriver");
+		// driver = new ChromeDriver(chromeOptions);
+
 		// WebDriverManager.chromedriver().setup();
 		// driver = new ChromeDriver();
 		driver.get("https://uat.erp2.upda.co.in/");
