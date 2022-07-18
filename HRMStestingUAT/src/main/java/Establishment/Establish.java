@@ -21,7 +21,7 @@ public class Establish extends login {
 	 * @AfterMethod public void tear down() {driver.quit();}
 	 */
 	
-	@Test(enabled = false)
+	@Test(enabled = true)
 	//(priority=1)
 	public void Update_Establishment() throws InterruptedException {
 		driver.findElement(By.xpath("/html/body/div[2]/div[1]/app-portal-dash/div/div[2]/div[5]/button/img")).click();
@@ -55,7 +55,7 @@ public class Establish extends login {
 		Thread.sleep(2000);
 	}
 
-	@Test(enabled = false)
+	@Test(enabled = true)
 	//(priority=2)
 	void ADD_Establishment() throws InterruptedException {
 		driver.findElement(By.xpath("//img[@src='./assets/img/dash/hrms.png']")).click();
@@ -161,20 +161,19 @@ public class Establish extends login {
 		driver.findElement(By.xpath("/html[1]/body[1]/div[2]/div[1]/app-party[1]/app-establishment[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[3]/mat-horizontal-stepper[1]/div[2]/div[2]/div[16]/div[2]/ng-select[1]/ng-dropdown-panel[1]/div[1]/div[2]/div[1]")).click();
 		Thread.sleep(2000);
 		// Uniform Given :
+		driver.findElement(By.xpath("/html[1]/body[1]/div[2]/div[1]/app-party[1]/app-establishment[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[3]/mat-horizontal-stepper[1]/div[2]/div[1]/div[18]/div[2]/ng-select[1]/div[1]/span[1]")).click();Thread.sleep(2000);
+		driver.findElement(By.xpath("/html[1]/body[1]/div[2]/div[1]/app-party[1]/app-establishment[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[3]/mat-horizontal-stepper[1]/div[2]/div[1]/div[18]/div[2]/ng-select[1]/ng-dropdown-panel[1]/div[1]/div[2]/div[2]")).click();Thread.sleep(2000);
+		//Work City:
+		driver.findElement(By.xpath("/html[1]/body[1]/div[2]/div[1]/app-party[1]/app-establishment[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[3]/mat-horizontal-stepper[1]/div[2]/div[1]/div[19]/div[2]/ng-select[1]/div[1]/span[1]")).click();Thread.sleep(2000);
+		driver.findElement(By.xpath("/html[1]/body[1]/div[2]/div[1]/app-party[1]/app-establishment[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[3]/mat-horizontal-stepper[1]/div[2]/div[1]/div[20]/div[2]/ng-select[1]/ng-dropdown-panel[1]/div[1]/div[2]/div[3]/span[1]")).click();Thread.sleep(2000);
+	
 		@SuppressWarnings("unused")
 		String labelText = driver.findElement(By.xpath("//div[@for='text']")).getText();
 		System.out.println("Label Missing");
 	}
-	// Uniform Given :
 
-	// driver.findElement(By.xpath("")).click();Thread.sleep(2000);
-	// Work City:
-	/*
-	 * driver.findElement(By.xpath("")).click();Thread.sleep(2000);
-	 * driver.findElement(By.xpath("")).click();Thread.sleep(2000);*/
-	
 
-	 @Test(enabled = false)
+	 @Test(enabled = true)
 	 //(priority=3)
 	 public	void variable_pay() throws InterruptedException {
 		 driver.findElement(By.xpath("//img[@src='./assets/img/dash/hrms.png']")).click();
@@ -189,7 +188,7 @@ public class Establish extends login {
 		 Actions Actions1 =new Actions(driver);
 		 WebDriverWait wait1 = new WebDriverWait(driver, Duration.ofSeconds(30));
 		 wait1.until(ExpectedConditions.elementToBeClickable(By.xpath("/html[1]/body[1]/div[2]/div[1]/app-payroll[1]/app-fixed-pay[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/div[2]/ng-select[1]/div[1]/div[1]/div[2]/input[1]"))).click();
-		 WebElement element1 = driver.findElement(By.xpath("/html[1]/body[1]/div[2]/div[1]/app-payroll[1]/app-fixed-pay[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/div[2]/ng-select[1]/ng-dropdown-panel[1]/div[1]/div[2]/div[2]"));
+		 WebElement element1 = driver.findElement(By.xpath("/html[1]/body[1]/div[2]/div[1]/app-payroll[1]/app-fixed-pay[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/div[2]/ng-select[1]/ng-dropdown-panel[1]/div[1]/div[2]/div[1]"));
 		 Actions1.moveToElement(element1).click().build().perform();
 		 driver.findElement(By.xpath("//button[@class='btn btn-primary']")).click();
 		 Thread.sleep(2000);
@@ -211,7 +210,7 @@ public class Establish extends login {
 	 ////// System.out.println("Test Case failed__Box is null");
 	 
 	//(priority=4)
-	 @Test(enabled = false)
+	/* @Test(enabled = true)
 	 public void update() throws InterruptedException {
 		 driver.findElement(By.xpath("//img[@src='./assets/img/dash/hrms.png']")).click();
 		 Thread.sleep(2000);
@@ -227,11 +226,11 @@ public class Establish extends login {
 		 WebElement element1 = driver.findElement(By.xpath("/html[1]/body[1]/div[2]/div[1]/app-party[1]/app-establishment[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/div[2]/ng-select[1]/ng-dropdown-panel[1]/div[1]/div[2]/div[19]"));
 		 Actions1.moveToElement(element1).click().build().perform();
 		 driver.findElement(By.xpath("(//button[contains(text(),'Update')])[1]")).click();
-		 Thread.sleep(2000);
-	 }
+		 Thread.sleep(2000);}*/
+	 
 
 	//(priority=5)
-	 @Test(enabled = false)
+	 @Test(enabled = true)
 	 public void posting() throws InterruptedException {
 		 driver.findElement(By.xpath("//img[@src='./assets/img/dash/hrms.png']")).click();
 		 Thread.sleep(2000);
@@ -285,7 +284,7 @@ public class Establish extends login {
 	  */
 	 
 	//(priority=7)
-	 @Test(enabled = false)
+	 @Test(enabled = true)
 	 public void Retirement() throws InterruptedException {
 		 driver.findElement(By.xpath("//img[@src='./assets/img/dash/hrms.png']")).click();
 		 Thread.sleep(2000);
@@ -296,7 +295,7 @@ public class Establish extends login {
 	 }
 
 	//(priority=8)
-	 @Test(enabled = false)
+	 @Test(enabled = true)
 	 void death() throws InterruptedException {
 		 driver.findElement(By.xpath("//img[@src='./assets/img/dash/hrms.png']")).click();
 		 Thread.sleep(2000);
@@ -328,7 +327,7 @@ public class Establish extends login {
 	 }
 
 	//(priority=9)
-	 @Test(enabled = false)
+	 /*@Test(enabled = true)
 	 public void Reappointment() throws InterruptedException {
 		 driver.findElement(By.xpath("//img[@src='./assets/img/dash/hrms.png']")).click();
 		 Thread.sleep(2000);
@@ -338,13 +337,13 @@ public class Establish extends login {
 		 Thread.sleep(2000);
 		 driver.findElement(By.xpath( "/html[1]/body[1]/div[2]/div[1]/app-party[1]/app-reappointment[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/ng-select[1]/div[1]/span[1]")).click();
 		 Thread.sleep(2000);
-		 driver.findElement(By.xpath("/html[1]/body[1]/div[2]/div[1]/app-party[1]/app-reappointment[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/ng-select[1]/ng-dropdown-panel[1]/div[1]/div[2]/div[2]")).click();
-		 Thread.sleep(2000);
-		 /////////////////// NOT WORKING///////////////
-	 }
+		 driver.findElement(By.xpath("")).click();
+		 Thread.sleep(2000); }
+		 /////////////////// NOT WORKING///////////////*/
+	
 
 	//(priority=10)
-	 @Test(enabled = false)
+	 @Test(enabled = true)
 	 public void Resign() throws InterruptedException {
 		 driver.findElement(By.xpath("//img[@src='./assets/img/dash/hrms.png']")).click();
 		 Thread.sleep(2000);
@@ -367,7 +366,7 @@ public class Establish extends login {
 	 }
 
 	//(priority=11)
-	 @Test(enabled = false)
+	 @Test(enabled = true)
 	 public void Update_Emp_Resign() throws InterruptedException {
 		 driver.findElement(By.xpath("//img[@src='./assets/img/dash/hrms.png']")).click();
 		 Thread.sleep(2000);
@@ -391,7 +390,7 @@ public class Establish extends login {
 	 }
 
 	//(priority=12)
-	 @Test(enabled =false)
+	 @Test(enabled =true)
 	 public void Transfer() throws InterruptedException {
 		 driver.findElement(By.xpath("/html/body/div[2]/div[1]/app-portal-dash/div/div[2]/div[5]/button/img")).click();
 		 Thread.sleep(2000);
