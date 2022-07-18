@@ -2,6 +2,7 @@
 package Establishment;
 
 import java.time.Duration;
+import java.util.HashMap;
 import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -11,8 +12,6 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.Parameters;
 
 public class login {
 	public static WebDriver driver;
@@ -51,16 +50,35 @@ public class login {
 		}*/
 		
 		 
-		 System.setProperty("webdriver.chrome.driver", "/usr/local/bin/chromedriver");
-		 ChromeOptions options = new ChromeOptions();
-		 options.addArguments("start-maximized"); // open Browser in maximized mode
-		 options.addArguments("disable-infobars"); // disabling infobars
-		 options.addArguments("--disable-extensions"); // disabling extensions
-		 options.addArguments("--disable-gpu"); // applicable to windows os only
-		 options.addArguments("--disable-dev-shm-usage"); // overcome limited resource problems
-		 options.addArguments("--no-sandbox"); // Bypass OS security model
-		 driver = new ChromeDriver(options);
-		// driver.get("https://google.com");
+	//	System.setProperty("webdriver.chrome.driver", "/usr/local/bin/chromedriver");
+	//	ChromeOptions options = new ChromeOptions();
+	//	options.addArguments("start-maximized"); // open Browser in maximized mode
+	//	 options.addArguments("disable-infobars"); // disabling infobars
+	//	options.addArguments("--disable-extensions"); // disabling extensions
+	//	options.addArguments("--disable-gpu"); // applicable to windows os only
+	//	 options.addArguments("--disable-dev-shm-usage"); // overcome limited resource problems
+	//	options.addArguments("--no-sandbox"); // Bypass OS security model
+	//	driver = new ChromeDriver(options);
+		 
+		
+			
+			 
+		
+			String downloadFilepath = System.getProperty("/usr/local/bin/chromedriver");
+			HashMap<String, Object> chromePrefs = new HashMap<>();
+			chromePrefs.put("profile.default_content_settings.popups", 0);
+			chromePrefs.put("download.default_directory", downloadFilepath);
+			ChromeOptions options = new ChromeOptions();
+			options.setExperimentalOption("prefs", chromePrefs);
+			options.addArguments("--no-sandbox");
+			options.addArguments("--headless"); //should be enabled for Jenkins
+			options.addArguments("--disable-dev-shm-usage"); //should be enabled for Jenkins
+			options.addArguments("--window-size=1920x1080"); //should be enabled for Jenkins
+			driver = new ChromeDriver(options);
+			 
+
+	       
+		 
 		 
 		 
 		//ChromeOptions chromeOptions = new ChromeOptions();
