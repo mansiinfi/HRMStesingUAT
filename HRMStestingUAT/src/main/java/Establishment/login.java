@@ -12,8 +12,6 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-
-
 public class login {
 	public static WebDriver driver;
 
@@ -21,16 +19,16 @@ public class login {
 	public void intialize() throws InterruptedException {
 		// WebDriverManager.chromedriver().setup();
 		// driver = new ChromeDriver();
-		
-		System.setProperty("webdriver.chrome.driver", "/usr/local/bin/chromedriver");
-		
-		//System.setProperty("webdriver.chrome.driver", "src/test/resources/Driver/chromedriver_linux64/chromedriver");
-		ChromeOptions options = new ChromeOptions();
 
-		options.setAcceptInsecureCerts(true);
-	        driver = new ChromeDriver(options);
-		//WebDriverManager.chromedriver().setup();
-		//driver = new ChromeDriver();
+		// System.setProperty("webdriver.chrome.driver",
+		// "src/test/resources/Driver/chromedriver_linux64/chromedriver");
+		ChromeOptions chromeOptions = new ChromeOptions();
+		chromeOptions.setHeadless(true);
+
+		System.setProperty("webdriver.chrome.driver", "/usr/local/bin/chromedriver");
+		driver = new ChromeDriver(chromeOptions);
+		// WebDriverManager.chromedriver().setup();
+		// driver = new ChromeDriver();
 		driver.get("https://uat.erp2.upda.co.in/");
 		driver.manage().window().maximize();
 		driver.findElement(By.name("email")).sendKeys("7778889999");
@@ -44,7 +42,9 @@ public class login {
 
 		WebElement element = driver.findElement(By.xpath("//span[normalize-space()='92 - Automated Testing Account']"));
 		actions.moveToElement(element).click().build().perform();
-		driver.findElement(By.xpath("//div[@id='multi_account']//button[@class='btn btn-primary'][normalize-space()='Submit']")).click();
+		driver.findElement(
+				By.xpath("//div[@id='multi_account']//button[@class='btn btn-primary'][normalize-space()='Submit']"))
+				.click();
 		Thread.sleep(2000);
 		driver.findElement(By.xpath("//button[normalize-space()='OK']")).click();
 		// driver.findElement(By.xpath("/html/body/div[2]/div[1]/app-portal-dash/div/div[2]/div[5]/button/img")).click();
