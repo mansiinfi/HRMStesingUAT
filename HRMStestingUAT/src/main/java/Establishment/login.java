@@ -11,6 +11,8 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Parameters;
 
 public class login {
 	public static WebDriver driver;
@@ -22,11 +24,52 @@ public class login {
 
 		// System.setProperty("webdriver.chrome.driver",
 		// "src/test/resources/Driver/chromedriver_linux64/chromedriver");
-		ChromeOptions chromeOptions = new ChromeOptions();
-		chromeOptions.setHeadless(true);
+		
+		
+		
+		 //Setting up capabilities to run our test script
+		
+		/* @Parameters(value= {"browser","version"})
+		
+		@BeforeClass public void setUp(String browser, String version) throws
+		 Exception { DesiredCapabilities capabilities = new DesiredCapabilities();
+		 capabilities.setCapability("browserName", browser);
+		 capabilities.setCapability("version", version);
+		 capabilities.setCapability("platform", "win10"); // If this cap isn't
+		 specified, it will just get any available one
+		 capabilities.setCapability("build", "LambdaTestSampleApp");
+		 capabilities.setCapability("name", "LambdaTestJavaSample");
+		 capabilities.setCapability("network", true); // To enable network logs
+		 capabilities.setCapability("visual", true); // To enable step by step
+		 screenshot capabilities.setCapability("video", true); // To enable video
+		 recording capabilities.setCapability("console", true); // To capture console
+		 logs try { driver = new RemoteWebDriver(new URL("https://" + username + ":" +
+		 accesskey + gridURL), capabilities); } catch (MalformedURLException e) {
+		 System.out.println("Invalid grid URL"); } catch (Exception e) {
+		 System.out.println(e.getMessage()); }
+		
+		}*/
+		
+		 
+		 System.setProperty("webdriver.chrome.driver", "/usr/local/bin/chromedriver");
+		 ChromeOptions options = new ChromeOptions();
+		 options.addArguments("start-maximized"); // open Browser in maximized mode
+		 options.addArguments("disable-infobars"); // disabling infobars
+		 options.addArguments("--disable-extensions"); // disabling extensions
+		 options.addArguments("--disable-gpu"); // applicable to windows os only
+		 options.addArguments("--disable-dev-shm-usage"); // overcome limited resource problems
+		 options.addArguments("--no-sandbox"); // Bypass OS security model
+		 driver = new ChromeDriver(options);
+		// driver.get("https://google.com");
+		 
+		 
+		//ChromeOptions chromeOptions = new ChromeOptions();
+		//chromeOptions.setHeadless(true);
 
-		System.setProperty("webdriver.chrome.driver", "/usr/local/bin/chromedriver");
-		driver = new ChromeDriver(chromeOptions);
+		//System.setProperty("webdriver.chrome.driver", "/usr/local/bin/chromedriver");
+		//driver = new ChromeDriver(chromeOptions);
+		
+		
 		// WebDriverManager.chromedriver().setup();
 		// driver = new ChromeDriver();
 		driver.get("https://uat.erp2.upda.co.in/");
