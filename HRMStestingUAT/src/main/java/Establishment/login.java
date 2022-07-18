@@ -28,7 +28,7 @@ public class login {
 		ChromeOptions options = new ChromeOptions();
 
 		options.setAcceptInsecureCerts(true);
-	     driver = new ChromeDriver(options);
+	        driver = new ChromeDriver(options);
 		//WebDriverManager.chromedriver().setup();
 		//driver = new ChromeDriver();
 		driver.get("https://uat.erp2.upda.co.in/");
